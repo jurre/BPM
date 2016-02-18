@@ -12,6 +12,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var bpmLabel: UILabel!
     @IBOutlet weak var beatCountLabel: UILabel!
+    @IBOutlet weak var bpmPreciseLabel: UILabel!
+
     var firstPressTime: NSDate!
     var lastPressTime: NSDate!
     var pressCount = 0
@@ -65,12 +67,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     func updateView(bpm: Double) {
         var bpmValue = "-"
+        var bpmPreciseValue = "-"
         
         if bpm > 0 {
             bpmValue = String(format: "%.0f", bpm)
+            bpmPreciseValue = String(format: "%.2f", bpm)
         }
         
         bpmLabel.text = bpmValue
+        bpmPreciseLabel.text = bpmPreciseValue
         beatCountLabel.text = "\(pressCount) beats"
     }
 }
