@@ -69,7 +69,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         var bpmValue = "-"
         var bpmPreciseValue = "-"
         
-        if bpm > 0 && beatCount > 4 {
+        if bpm > 0 && beatCount > 3 {
             bpmValue = String(format: "%.0f", bpm)
             bpmPreciseValue = String(format: "%.2f", bpm)
         }
